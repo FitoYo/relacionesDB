@@ -12,22 +12,13 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
@@ -38,7 +29,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     public function profile()
     {
         return $this->hasOne(Profile::class);
@@ -47,6 +37,11 @@ class User extends Authenticatable
     public function level()
     {
         return $this->belongsTo(Level::class);
+    }
+    
+    public function groups()
+    {
+        return $this->belongsMany(Group::class);
     }
 
 
