@@ -17,7 +17,7 @@ class Video extends Model
 
     public function category()
     {
-        return $this->belongs(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function comments()
