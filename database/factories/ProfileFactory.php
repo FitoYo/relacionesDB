@@ -14,9 +14,10 @@ class ProfileFactory extends Factory
     public function definition()
     {
         return [
+            'user_id' => $this->faker->numberBetween(1, 8),
             'instagram' => $this->faker->userName(),
             'github' => $this->faker->userName(),
-            'web' => $this->faker->web(),
+            'web' => $this->faker->url(),
 
         ];
     }

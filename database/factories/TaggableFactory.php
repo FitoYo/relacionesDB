@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class LocationFactory extends Factory
+class TaggableFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +14,9 @@ class LocationFactory extends Factory
     public function definition()
     {
         return [
-            'country' => $this->faker->country(),
-            'profile_id' => $this->faker->numberBetween(1, 8),
+            'tag_id' => $this->faker->numberBetween(1, 12),
+            'taggable_type' => $this->faker->randomElement(['posts', 'videos']),
+            'taggable_id' => $this->faker->numberBetween(1, 40),
 
         ];
     }

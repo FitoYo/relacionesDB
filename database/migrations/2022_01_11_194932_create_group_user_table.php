@@ -13,10 +13,12 @@ class CreateGroupUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('group_user', function (Blueprint $table) {
+        Schema::create('group_users', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('group_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
+            $table->timestamps();
+            
             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
@@ -29,6 +31,6 @@ class CreateGroupUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('group_user');
+        Schema::dropIfExists('group_users');
     }
 }

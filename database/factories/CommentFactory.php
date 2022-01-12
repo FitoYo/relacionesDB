@@ -15,7 +15,14 @@ class CommentFactory extends Factory
     {
         return [
             'body' => $this->faker->text(),
-            'user_id' => $this->faker->rand(1, 5),
+            'user_id' => $this->faker->numberBetween(1, 8),
+
+
+            'commentable_type' => $this->faker->randomElement(['posts', 'videos']),
+            'commentable_id' => $this->faker->numberBetween(1, 40),
+
         ];
     }
 }
+
+
