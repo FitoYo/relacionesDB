@@ -10,7 +10,9 @@ Route::get('/', function () {
 
 Route::get('/profile/{id}', function($id){
     $user = App\Models\User::find($id);
-    return view('profile', compact('user'));
+
+return $user->groups;
+    //return view('profile', compact('user'));
 })->name('profile');
 
 

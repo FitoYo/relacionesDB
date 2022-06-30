@@ -15,7 +15,7 @@ class TaggableFactory extends Factory
     {
         return [
             'tag_id' => $this->faker->numberBetween(1, 12),
-            'taggable_type' => $this->faker->randomElement(['posts', 'videos']),
+            'taggable_type' => $this->faker->randomElement(['App\Models\posts', 'App\Models\videos']),
             'taggable_id' => $this->faker->numberBetween(1, 40),
 
         ];

@@ -13,9 +13,9 @@ class ImageFactory extends Factory
      */
     public function definition()
     {
-        $type = $this->faker->randomElement(['users', 'posts', 'videos']);
+        $type = $this->faker->randomElement(['App\Models\users', 'App\Models\posts', 'App\Models\videos']);
 
-        if($type == 'users'){
+        if($type == 'App\Models\users'){
                         $id =  $this->faker->numberBetween(1, 8);
                     }else{
                         $id = $this->faker->numberBetween(1, 40);}

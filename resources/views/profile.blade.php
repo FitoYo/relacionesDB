@@ -11,7 +11,8 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 pt-3 shadow">
+                    <hr>
                     <hr>
                     <h1 class="text-primary">{{$user->name}}</h1>
                     <h3 class="text-secondary">{{$user->email}}</h3>
@@ -21,6 +22,23 @@
                     <strong>Github</strong>: {{$user->profile->github}} |
                     <strong>Web</strong>: {{$user->profile->web}}
                     <hr>
+                    <p>
+                        <strong>Pais</strong>: {{$user->location->country}} <br>
+                        <strong>NIvel</strong>: @if ($user->level)
+                                                    <a href="#">{{$user->level->name}}</a>
+                                                @else  --- @endif <br>
+                                         
+                    </p>
+                    <hr>
+                    <p>
+                         <strong>Group</strong>
+
+                        <!--    @foreach($user->groups as $group)
+                            <span class="badge badge-primary">{{$group->name}}</span>
+                            @endforeach -->
+                    </p>
+                    <hr>
+
                 </div>       
             </div>
         </div>
